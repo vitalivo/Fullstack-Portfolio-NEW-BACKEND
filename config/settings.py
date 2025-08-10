@@ -168,11 +168,13 @@ REST_FRAMEWORK = {
 }
 
 # CORS настройки для фронтенда
+# В settings.py ИСПРАВИТЬ:
 CORS_ALLOWED_ORIGINS = [
-  "http://localhost:3000",  # Next.js dev server
-  "http://127.0.0.1:3000",
-  "https://vitaly-portfolio.vercel.app",  # Продакшн фронтенд
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://fullstack-portfolio-new.vercel.app",  # ← ИСПРАВИТЬ ЭТУ СТРОКУ!
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 # Email settings (для обратной связи)
