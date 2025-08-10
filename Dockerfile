@@ -23,4 +23,4 @@ RUN mkdir -p staticfiles media logs
 EXPOSE 8000
 
 # ОБНОВЛЕННАЯ команда запуска с импортом данных
-CMD ["sh", "-c", "python manage.py migrate --settings=config.settings_production && python manage.py setup_initial_data --settings=config.settings_production && python manage.py import_production_data --settings=config.settings_production && python manage.py collectstatic --noinput --settings=config.settings_production && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]
+CMD ["sh", "-c", "python manage.py migrate --settings=config.settings_production && python manage.py create_superuser_if_none_exists --settings=config.settings_production && python manage.py collectstatic --noinput --settings=config.settings_production && gunicorn --bind 0.0.0.0:8000 config.wsgi:application"]

@@ -40,12 +40,12 @@ else:
         }
     }
 
-# Статические файлы для продакшена
+# ИСПРАВЛЕНО: Статические файлы для продакшена
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# ИСПРАВЛЕНО: Убираем STATICFILES_DIRS для продакшена чтобы избежать конфликтов
-# STATICFILES_DIRS = [BASE_DIR / 'static']
+# ИСПРАВЛЕНО: Убираем STATICFILES_DIRS для продакшена
+# Это исправит предупреждение "The directory '/app/static' does not exist"
 
 # WhiteNoise для статических файлов
 if 'whitenoise.middleware.WhiteNoiseMiddleware' not in MIDDLEWARE:
