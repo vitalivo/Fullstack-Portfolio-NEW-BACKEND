@@ -1,0 +1,44 @@
+[
+{
+  "model": "contacts.contactmessage",
+  "pk": 15,
+  "fields": {
+    "name": "Vitaly Voloshyn",
+    "email": "Vitalivo@gmail.com",
+    "phone": "0506457335",
+    "company": "ויטלי",
+    "subject": "ваясаыыасуц",
+    "message": "прлан",
+    "status": "read",
+    "priority": "normal",
+    "source": "website",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "reply_message": "",
+    "replied_at": null,
+    "created_at": "2025-08-09T08:02:54.978Z",
+    "updated_at": "2025-08-09T08:02:58.672Z"
+  }
+},
+{
+  "model": "contacts.contactmessage",
+  "pk": 16,
+  "fields": {
+    "name": "Vitaly Voloshyn",
+    "email": "Vitalivo@gmail.com",
+    "phone": "0506457335",
+    "company": "ויטלי",
+    "subject": "пчсрот",
+    "message": "сямпчярыв",
+    "status": "read",
+    "priority": "normal",
+    "source": "website",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "ip_address": "127.0.0.1",
+    "reply_message": "",
+    "replied_at": null,
+    "created_at": "2025-08-09T10:05:49.762Z",
+    "updated_at": "2025-08-09T10:05:52.702Z"
+  }
+}
+]

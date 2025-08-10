@@ -1,0 +1,33 @@
+vitaly-portfolio/
+├── backend/
+│   ├── venv/                    # Виртуальное окружение
+│   ├── apps/
+│   │   ├── __init__.py
+│   │   ├── core/               # Профиль, настройки
+│   │   │   ├── __init__.py
+│   │   │   ├── admin.py
+│   │   │   ├── apps.py
+│   │   │   ├── models.py
+│   │   │   ├── serializers.py
+│   │   │   ├── views.py
+│   │   │   ├── urls.py
+│   │   │   └── migrations/
+│   │   ├── portfolio/          # Проекты
+│   │   ├── blog/              # Блог
+│   │   ├── certificates/      # Сертификаты
+│   │   ├── skills/           # Навыки
+│   │   └── contacts/         # Обратная связь
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   └── asgi.py
+│   ├── media/                 # Загруженные файлы
+│   ├── static/               # Статические файлы
+│   ├── locale/               # Переводы
+│   ├── manage.py
+│   └── requirements.txt
+├── frontend/                  # Будет создан позже
+├── docs/                     # Документация
+└── README.md
