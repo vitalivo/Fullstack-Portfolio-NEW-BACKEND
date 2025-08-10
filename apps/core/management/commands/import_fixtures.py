@@ -4,10 +4,10 @@ from pathlib import Path
 import os
 
 class Command(BaseCommand):
-    help = 'Import data in production environment'
+    help = 'Import all fixtures data'
 
     def handle(self, *args, **options):
-        self.stdout.write('🚀 Importing production data...')
+        self.stdout.write('📦 Importing fixtures data...')
         
         # Путь к fixtures
         fixtures_dir = Path(__file__).resolve().parent.parent.parent.parent.parent / 'fixtures'
@@ -41,5 +41,5 @@ class Command(BaseCommand):
                 )
         
         self.stdout.write(
-            self.style.SUCCESS('🎉 Production data import completed!')
+            self.style.SUCCESS('🎉 Fixtures import completed!')
         )
