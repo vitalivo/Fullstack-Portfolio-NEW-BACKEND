@@ -1,0 +1,676 @@
+[
+{
+  "model": "portfolio.technology",
+  "pk": 1,
+  "fields": {
+    "name": "Python",
+    "slug": "python",
+    "color": "#3776ab",
+    "icon": "python"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 2,
+  "fields": {
+    "name": "Django",
+    "slug": "django",
+    "color": "#092e20",
+    "icon": "django"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 3,
+  "fields": {
+    "name": "Django REST Framework",
+    "slug": "django-rest-framework",
+    "color": "#092e20",
+    "icon": "api"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 4,
+  "fields": {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "color": "#336791",
+    "icon": "database"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 5,
+  "fields": {
+    "name": "SQLite",
+    "slug": "sqlite",
+    "color": "#003b57",
+    "icon": "database"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 6,
+  "fields": {
+    "name": "Celery",
+    "slug": "celery",
+    "color": "#37b24d",
+    "icon": "celery"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 7,
+  "fields": {
+    "name": "Redis",
+    "slug": "redis",
+    "color": "#dc382d",
+    "icon": "redis"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 8,
+  "fields": {
+    "name": "Linux",
+    "slug": "linux",
+    "color": "#3B82F6",
+    "icon": "linux"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 9,
+  "fields": {
+    "name": "Docker",
+    "slug": "docker",
+    "color": "#3B82F6",
+    "icon": "docker"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 10,
+  "fields": {
+    "name": "JavaScript",
+    "slug": "javascript",
+    "color": "#f7df1e",
+    "icon": "javascript"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 11,
+  "fields": {
+    "name": "TypeScript",
+    "slug": "typescript",
+    "color": "#3178c6",
+    "icon": "typescript"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 12,
+  "fields": {
+    "name": "React",
+    "slug": "react",
+    "color": "#3178c6",
+    "icon": "react"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 13,
+  "fields": {
+    "name": "Next.js",
+    "slug": "nextjs",
+    "color": "#000000",
+    "icon": "nextjs"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 14,
+  "fields": {
+    "name": "HTML5",
+    "slug": "html5",
+    "color": "#e34f26",
+    "icon": "html5"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 15,
+  "fields": {
+    "name": "CSS3",
+    "slug": "css3",
+    "color": "#1572b6",
+    "icon": "css3"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 16,
+  "fields": {
+    "name": "Tailwind CSS",
+    "slug": "tailwind-css",
+    "color": "#06b6d4",
+    "icon": "tailwindcss"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 17,
+  "fields": {
+    "name": "Bootstrap",
+    "slug": "bootstrap",
+    "color": "#7952b3",
+    "icon": "sass"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 18,
+  "fields": {
+    "name": "Git",
+    "slug": "git",
+    "color": "#f05032",
+    "icon": "git"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 19,
+  "fields": {
+    "name": "Webpack",
+    "slug": "webpack",
+    "color": "#8dd6f9",
+    "icon": "webpack"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 20,
+  "fields": {
+    "name": "WebSocket",
+    "slug": "websocket",
+    "color": "#010101",
+    "icon": "websocket"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 21,
+  "fields": {
+    "name": "Telegram Bot API",
+    "slug": "telegram-bot-api",
+    "color": "#0088cc",
+    "icon": "telegram"
+  }
+},
+{
+  "model": "portfolio.technology",
+  "pk": 22,
+  "fields": {
+    "name": "React Router",
+    "slug": "react-router",
+    "color": "#ca4245",
+    "icon": "router"
+  }
+},
+{
+  "model": "portfolio.projectcategory",
+  "pk": 1,
+  "fields": {
+    "name_en": "Web Applications",
+    "name_ru": "Веб-приложения",
+    "name_he": "web-applications",
+    "slug": "web-applications"
+  }
+},
+{
+  "model": "portfolio.projectcategory",
+  "pk": 2,
+  "fields": {
+    "name_en": "API Development",
+    "name_ru": "Разработка API",
+    "name_he": "פיתוח API",
+    "slug": "api-development"
+  }
+},
+{
+  "model": "portfolio.projectcategory",
+  "pk": 3,
+  "fields": {
+    "name_en": "Frontend Projects",
+    "name_ru": "Frontend проекты",
+    "name_he": "פרויקטי Frontend",
+    "slug": "frontend-projects"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 1,
+  "fields": {
+    "title_en": "Insurance Platform",
+    "title_ru": "Страховая платформа",
+    "title_he": "פלטפורמת ביטוח",
+    "slug": "insurance-platform",
+    "description_en": "A comprehensive insurance platform built with modern web technologies, featuring responsive design and user-friendly interface.",
+    "description_ru": "Комплексная страховая платформа, построенная с использованием современных веб-технологий, с адаптивным дизайном и удобным интерфейсом.",
+    "description_he": "פלטפורמת ביטוח מקיפה הבנויה עם טכנולוגיות אינטרנט מודרניות, עם עיצוב רספונסיבי וממשק ידידותי למשתמש.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/insurance-platform-new.git",
+    "demo_url": "https://vitalivo.github.io/insurance-platform/",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 1,
+    "project_type": "fullstack",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 0,
+    "created_at": "2025-08-06T10:46:29.704Z",
+    "updated_at": "2025-08-06T11:02:55.482Z",
+    "technologies": [
+      17,
+      6,
+      15,
+      2,
+      3,
+      9,
+      18,
+      14,
+      10,
+      8,
+      13,
+      4,
+      1,
+      12,
+      22,
+      7,
+      5,
+      16,
+      21,
+      11,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 2,
+  "fields": {
+    "title_en": "News Portal Django",
+    "title_ru": "Новостной портал Django",
+    "title_he": "פורטל חדשות Django",
+    "slug": "news-portal-django",
+    "description_en": "A full-featured news portal built with Django framework, featuring article management, user authentication, and REST API.",
+    "description_ru": "Полнофункциональный новостной портал, построенный на Django, с управлением статьями, аутентификацией пользователей и REST API.",
+    "description_he": "פורטל חדשות מלא הבנוי עם Django, כולל ניהול מאמרים, אימות משתמשים ו-REST API.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/NEWS_PORTALL",
+    "demo_url": "",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 1,
+    "project_type": "fullstack",
+    "status": "completed",
+    "year": 2024,
+    "is_featured": true,
+    "order": 1,
+    "created_at": "2025-08-06T12:42:42.754Z",
+    "updated_at": "2025-08-06T12:42:55.377Z",
+    "technologies": [
+      15,
+      2,
+      3,
+      5
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 3,
+  "fields": {
+    "title_en": "Silant Forklift System",
+    "title_ru": "Система Силант для погрузчиков",
+    "title_he": "מערכת Silant למלגזות",
+    "slug": "silant-forklift-system",
+    "description_en": "Production-ready forklift management system with Django backend, PostgreSQL database, and React frontend.",
+    "description_ru": "Готовая к продакшену система управления погрузчиками с Django бэкендом, базой данных PostgreSQL и React фронтендом.",
+    "description_he": "מערכת ניהול מלגזות מוכנה לייצור עם Django backend, מסד נתונים PostgreSQL ו-React frontend.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/silant-2.git",
+    "demo_url": "",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 1,
+    "project_type": "fullstack",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 2,
+    "created_at": "2025-08-06T12:51:53.195Z",
+    "updated_at": "2025-08-06T12:51:53.195Z",
+    "technologies": [
+      17,
+      6,
+      15,
+      2,
+      3,
+      18,
+      14,
+      10,
+      8,
+      13,
+      4,
+      1,
+      12,
+      22,
+      5,
+      16,
+      11,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 4,
+  "fields": {
+    "title_en": "MMORPG Bulletin Board",
+    "title_ru": "Доска объявлений MMORPG",
+    "title_he": "לוח מודעות MMORPG",
+    "slug": "mmorpg-bulletin-board",
+    "description_en": "A bulletin board system for MMORPG players with Django backend, PostgreSQL database, Celery for background tasks, and Redis for caching.",
+    "description_ru": "Система доски объявлений для игроков MMORPG с Django бэкендом, базой данных PostgreSQL, Celery для фоновых задач и Redis для кэширования.",
+    "description_he": "מערכת לוח מודעות לשחקני MMORPG עם Django backend, מסד נתונים PostgreSQL, Celery למשימות רקע ו-Redis לקאשינג.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/Bulletin_Board_MMORPG-.git",
+    "demo_url": "",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 1,
+    "project_type": "fullstack",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 3,
+    "created_at": "2025-08-06T12:55:40.313Z",
+    "updated_at": "2025-08-06T12:56:03.332Z",
+    "technologies": [
+      17,
+      6,
+      15,
+      2,
+      3,
+      18,
+      14,
+      10,
+      8,
+      13,
+      4,
+      1,
+      12,
+      22,
+      7,
+      16,
+      11,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 5,
+  "fields": {
+    "title_en": "Real-Time Chat",
+    "title_ru": "Чат в реальном времени",
+    "title_he": "צ'אט בזמן אמת",
+    "slug": "real-time-chat",
+    "description_en": "Real-time chat application with WebSocket API, JavaScript frontend, and geolocation features.",
+    "description_ru": "Приложение чата в реальном времени с WebSocket API, JavaScript фронтендом и функциями геолокации.",
+    "description_he": "אפליקציית צ'אט בזמן אמת עם WebSocket API, JavaScript frontend ותכונות גיאולוקציה.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/module_41.git",
+    "demo_url": "",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 3,
+    "project_type": "frontend",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 4,
+    "created_at": "2025-08-06T13:00:12.615Z",
+    "updated_at": "2025-08-06T13:00:12.615Z",
+    "technologies": [
+      6,
+      15,
+      18,
+      14,
+      10,
+      13,
+      12,
+      22,
+      16
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 6,
+  "fields": {
+    "title_en": "Telegram Bot",
+    "title_ru": "Telegram бот",
+    "title_he": "בוט טלגרם",
+    "slug": "telegram-bot",
+    "description_en": "Automated Telegram bot built with Python and Telegram Bot API for various automation tasks.",
+    "description_ru": "Автоматизированный Telegram бот, построенный с Python и Telegram Bot API для различных задач автоматизации.",
+    "description_he": "בוט טלגרם אוטומטי הבנוי עם Python ו-Telegram Bot API למשימות אוטומציה שונות.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/pythonProject_zoo.git",
+    "demo_url": "",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 2,
+    "project_type": "mobile",
+    "status": "completed",
+    "year": 2024,
+    "is_featured": true,
+    "order": 5,
+    "created_at": "2025-08-06T13:03:02.974Z",
+    "updated_at": "2025-08-06T13:03:02.974Z",
+    "technologies": [
+      1,
+      21
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 7,
+  "fields": {
+    "title_en": "convenient blog",
+    "title_ru": "Удобный блог",
+    "title_he": "בלוג נוח",
+    "slug": "convenient-blog",
+    "description_en": "A modern blog interface built with HTML5, CSS3, JavaScript, and SASS for enhanced styling capabilities.",
+    "description_ru": "Современный интерфейс блога, построенный с HTML5, CSS3, JavaScript и SASS для расширенных возможностей стилизации.",
+    "description_he": "ממשק בלוג מודרני הבנוי עם HTML5, CSS3, JavaScript ו-SASS ליכולות עיצוב משופרות.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/Youltalk-Blog.git",
+    "demo_url": "https://vitalivo.github.io/youtalk-blog/",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 3,
+    "project_type": "frontend",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 6,
+    "created_at": "2025-08-06T13:06:01.670Z",
+    "updated_at": "2025-08-06T13:06:01.670Z",
+    "technologies": [
+      15,
+      14,
+      10,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 8,
+  "fields": {
+    "title_en": "Website Slider",
+    "title_ru": "Слайдер для сайта",
+    "title_he": "סליידר לאתר",
+    "slug": "website-slider",
+    "description_en": "Interactive website slider component built with HTML5, CSS3, JavaScript, and React for dynamic content presentation.",
+    "description_ru": "Интерактивный компонент слайдера для сайта, построенный с HTML5, CSS3, JavaScript и React для динамической презентации контента.",
+    "description_he": "רכיב סליידר אינטראקטיבי לאתר הבנוי עם HTML5, CSS3, JavaScript ו-React להצגת תוכן דינמי.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/Slider.git",
+    "demo_url": "https://vitalivo.github.io/Slider/",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 3,
+    "project_type": "frontend",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 7,
+    "created_at": "2025-08-06T13:09:03.801Z",
+    "updated_at": "2025-08-06T13:09:03.801Z",
+    "technologies": [
+      17,
+      15,
+      14,
+      10,
+      12,
+      22,
+      5,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 9,
+  "fields": {
+    "title_en": "React Kanban Board",
+    "title_ru": "React Kanban доска",
+    "title_he": "לוח Kanban ב-React",
+    "slug": "react-kanban-board",
+    "description_en": "A fully functional Kanban board application built with React, TypeScript, and React Router for project management.",
+    "description_ru": "Полнофункциональное приложение Kanban доски, построенное с React, TypeScript и React Router для управления проектами.",
+    "description_he": "אפליקציית לוח Kanban פונקציונלית במלואה הבנויה עם React, TypeScript ו-React Router לניהול פרויקטים.",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/Kanban-Board.git",
+    "demo_url": "https://vitalivo.github.io/Kanban-Board/",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 1,
+    "project_type": "frontend",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": true,
+    "order": 8,
+    "created_at": "2025-08-06T13:12:01.404Z",
+    "updated_at": "2025-08-06T13:12:39.959Z",
+    "technologies": [
+      17,
+      15,
+      18,
+      14,
+      8,
+      13,
+      12,
+      22,
+      7,
+      16,
+      11,
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 10,
+  "fields": {
+    "title_en": "Real-Time Chat with Geolocation",
+    "title_ru": "Чат в реальном времени с геолокацией",
+    "title_he": "צ'אט בזמן אמת עם מיקום גיאוגרפי",
+    "slug": "real-time-chat-with-geolocation",
+    "description_en": "WebSocket-based chat application with echo server and geolocation features",
+    "description_ru": "Приложение для чата на базе WebSocket с функциями эхо-сервера и геолокации",
+    "description_he": "אפליקציית צ'אט מבוססת WebSocket עם שרת הד ותכונות גיאוגרפיה",
+    "long_description_en": "",
+    "long_description_ru": "",
+    "long_description_he": "",
+    "github_url": "https://github.com/vitalivo/Youltalk-Blog.git",
+    "demo_url": "https://vitalivo.github.io/youtalk-blog/",
+    "video_url": "",
+    "thumbnail": "",
+    "cover_image": "",
+    "category": 3,
+    "project_type": "frontend",
+    "status": "completed",
+    "year": 2025,
+    "is_featured": false,
+    "order": 9,
+    "created_at": "2025-08-06T13:19:27.451Z",
+    "updated_at": "2025-08-06T13:19:27.451Z",
+    "technologies": [
+      17,
+      15,
+      18,
+      14,
+      10,
+      8,
+      13,
+      12,
+      22,
+      16,
+      11,
+      19,
+      20
+    ]
+  }
+}
+]

@@ -1,0 +1,24 @@
+[
+{
+  "model": "contacts.contactinfo",
+  "pk": 1,
+  "fields": {
+    "email": "Vitalivo@gmail.com",
+    "phone": "0506457335",
+    "address": "הרב קטרוני 45 דירה 5",
+    "linkedin_url": "http://www.linkedin.com/in/vitaly-voloshin-07356983",
+    "github_url": "https://github.com/vitalivo",
+    "telegram_url": "https://t.me/Vitalivo",
+    "twitter_url": "",
+    "working_hours_en": "",
+    "working_hours_ru": "",
+    "working_hours_he": "",
+    "is_available_for_work": true,
+    "availability_note_en": "",
+    "availability_note_ru": "",
+    "availability_note_he": "",
+    "created_at": "2025-08-10T08:49:49.202Z",
+    "updated_at": "2025-08-10T09:07:45.860Z"
+  }
+}
+]

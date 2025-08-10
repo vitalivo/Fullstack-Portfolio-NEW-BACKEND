@@ -1,0 +1,95 @@
+[
+{
+  "model": "core.profile",
+  "pk": 1,
+  "fields": {
+    "first_name": "Vitaly",
+    "last_name": "Voloshyn",
+    "birth_date": "1975-04-03",
+    "location": "Israel",
+    "email": "Vitalivo@gmail.com",
+    "phone": "0506457335",
+    "linkedin_url": "https://linkedin.com/in/vitaly-voloshin-07356983",
+    "github_url": "https://github.com/vitalivo",
+    "current_title_en": "Fullstack Junior Developer",
+    "current_title_ru": "Fullstack Junior разработчик",
+    "current_title_he": "מפתח Fullstack Junior",
+    "bio_en": "Experienced professional transitioning to IT with 2+ years of intensive learning. Completed 16 courses and earned a diploma with honors from SkillFactory. Passionate about web development and ready to contribute to innovative projects.",
+    "bio_ru": "Опытный профессионал, переходящий в IT с 2+ годами интенсивного обучения. Прошел 16 курсов и получил диплом с отличием от SkillFactory. Увлечен веб-разработкой и готов вносить вклад в инновационные проекты.",
+    "bio_he": "איש מקצוע מנוסה העובר לתחום ההיי-טק עם למעלה משנתיים של למידה אינטנסיבית. סיים 16 קורסים וקיבל תעודה בהצטיינות מ-SkillFactory. נלהב מפיתוח אתרים ומוכן לתרום לפרויקטים חדשניים.",
+    "years_management": 20,
+    "years_it": 2,
+    "team_size_managed": 40,
+    "photo": "",
+    "resume_en": "",
+    "resume_ru": "",
+    "resume_he": "",
+    "created_at": "2025-08-06T08:48:41.519Z",
+    "updated_at": "2025-08-06T08:48:41.519Z",
+    "is_active": true
+  }
+},
+{
+  "model": "core.experience",
+  "pk": 1,
+  "fields": {
+    "profile": 1,
+    "company": "Magash",
+    "title_en": "Operations Manager",
+    "title_ru": "Менеджер по операциям",
+    "title_he": "מנהל תפעול",
+    "start_date": "2014-02-14",
+    "end_date": null,
+    "is_current": true,
+    "description_en": "Operations and Production Manager with +10 years of experience. Ability to lead teams and drive initiatives to improve operational efficiency. Skilled in building high-performance teams and delivering quality products on time. In addition, he has analytical and problem-solving skills. Experience in developing and managing systems and processes to maximize productivity and the ability to plan and implement effective strategies for success. Proven track record of reducing costs and increasing profitability. Relevant recommendations will be provided upon request.",
+    "description_ru": "Менеджер по производству и операционной деятельности с более чем 10-летним опытом работы. Способность руководить командами и выдвигать инициативы для повышения операционной эффективности. Умение создавать высокоэффективные команды и обеспечивать своевременную поставку качественной продукции. Кроме того, он обладает аналитическими навыками и навыками решения проблем. Опыт разработки и управления системами и процессами для максимального повышения производительности, а также умение планировать и внедрять эффективные стратегии для достижения успеха. Подтверждённый опыт снижения затрат и повышения рентабельности. Соответствующие рекомендации будут предоставлены по запросу.",
+    "description_he": "מנהל תפעול וייצור בעל +10 שנות ניסיון. בעל יכולת הובלת צוותים והנעת יוזמות לשיפור\r\nהיעילות התפעולית. מיומן בבניית צוותים בעלי ביצועים גבוהים ואספקת מוצרים איכותיים\r\nבזמן. בנוסף בעל יכולות אנליטיות ופתרון בעיות. בעל ניסיון בפיתוח וניהול מערכות\r\nותהליכים למיצוי הפרודוקטיביות ויכולת לתכנן וליישם אסטרטגיות יעילות להצלחה.\r\nרקורד מוכח של הפחתת עלויות והגדלת הרווחיות. המלצות רלוונטיות ימסרו על פי\r\nדרישה.",
+    "experience_type": "management",
+    "location": "israel",
+    "created_at": "2025-08-07T07:07:46.933Z",
+    "order": 1
+  }
+},
+{
+  "model": "core.experience",
+  "pk": 2,
+  "fields": {
+    "profile": 1,
+    "company": "SkillFactory",
+    "title_en": "Full Stack Web Development Student",
+    "title_ru": "Студент Full Stack веб-разработки",
+    "title_he": "סטודנט לפיתוח אינטרנט Full Stack",
+    "start_date": "2023-11-23",
+    "end_date": "2025-07-23",
+    "is_current": false,
+    "description_en": "Intensive program, including:\r\n\r\nFrontend: JavaScript, React, adaptive layout (HTML5/CSS3)\r\n\r\nBackend: Python, Django, REST API, databases (PostgreSQL)\r\n\r\nTools: Git, Docker, Webpack\r\n\r\nResult: 5+ projects in the portfolio (SPA, CRUD applications, API services)",
+    "description_ru": "Интенсивная программа, включающая:\r\n\r\nFrontend: JavaScript, React, адаптивная вёрстка (HTML5/CSS3)\r\n\r\nBackend: Python, Django, REST API, базы данных (PostgreSQL)\r\n\r\nИнструменты: Git, Docker, Webpack\r\n\r\nРезультат: 5+ проектов в портфолио (SPA, CRUD-приложения, API-сервисы)",
+    "description_he": "תוכנית אינטנסיבית, הכוללת:\r\n\r\nממשק חזיתי: JavaScript, React, עיצוב אדפטיבי (HTML5/CSS3)\r\n\r\nממשק קצה אחורי: Python, Django, REST API, מסדי נתונים (PostgreSQL)\r\n\r\nכלים: Git, Docker, Webpack\r\n\r\nתוצאה: 5+ פרויקטים בתיק העבודות (SPA, יישומי CRUD, שירותי API)",
+    "experience_type": "education",
+    "location": "Russia",
+    "created_at": "2025-08-07T07:53:19.660Z",
+    "order": 2
+  }
+},
+{
+  "model": "core.experience",
+  "pk": 3,
+  "fields": {
+    "profile": 1,
+    "company": "Self-Study / Stepik",
+    "title_en": "Self-Taught Developer",
+    "title_ru": "Самоучка-разработчик",
+    "title_he": "מפתח אוטודידקט",
+    "start_date": "2023-11-27",
+    "end_date": "2025-07-20",
+    "is_current": false,
+    "description_en": "Active development of modern technologies through online courses (Stepik, etc.) and pet projects\r\n\r\nReceived 15+ certificates in the following areas:\r\n• Python/Django (Advanced)\r\n• JavaScript/React (Intermediate)\r\n• Databases (PostgreSQL, SQLite)\r\n• Algorithms and data structures",
+    "description_ru": "Активное освоение современных технологий через онлайн-курсы (Stepik и др.) и pet-проекты\r\n\r\nПолучено 15+ сертификатов по направлениям:\r\n• Python/Django (Advanced)\r\n• JavaScript/React (Intermediate)\r\n• Базы данных (PostgreSQL, SQLite)\r\n• Алгоритмы и структуры данных",
+    "description_he": "פיתוח פעיל של טכנולוגיות מודרניות באמצעות קורסים מקוונים (Stepik וכו') ופרויקטים נלווים\r\n\r\nקיבלתי מעל 15 תעודות בתחומים הבאים:\r\n• Python/Django (מתקדם)\r\n• JavaScript/React (בינוני)\r\n• מסדי נתונים (PostgreSQL, SQLite)\r\n• אלגוריתמים ומבני נתונים",
+    "experience_type": "education",
+    "location": "israel",
+    "created_at": "2025-08-07T07:57:15.115Z",
+    "order": 3
+  }
+}
+]

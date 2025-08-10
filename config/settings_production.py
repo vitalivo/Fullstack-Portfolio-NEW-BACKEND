@@ -6,16 +6,16 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ИСПРАВЛЕНО: Импортируем базовые настройки
+# Импортируем базовые настройки
 from .settings import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-# ИСПРАВЛЕНО: Для Railway используем переменные окружения напрямую
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,*.railway.app').split(',')
+# ИСПРАВЛЕНО: Убрал Railway, оставил только Render
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,*.onrender.com').split(',')
 
-# ИСПРАВЛЕНО: База данных для Railway (используем DATABASE_URL из переменных окружения)
+# База данных для продакшена (Render использует DATABASE_URL)
 DATABASE_URL = config('DATABASE_URL', default='')
 print(f"🔗 DATABASE_URL: {DATABASE_URL[:50]}..." if DATABASE_URL else "❌ DATABASE_URL not found")
 
@@ -44,6 +44,9 @@ else:
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# ИСПРАВЛЕНО: Убираем STATICFILES_DIRS для продакшена чтобы избежать конфликтов
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+
 # WhiteNoise для статических файлов
 if 'whitenoise.middleware.WhiteNoiseMiddleware' not in MIDDLEWARE:
     MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
@@ -54,30 +57,38 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# CORS для продакшена
-CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='https://fullstack-portfolio-new.vercel.app,http://localhost:3000').split(',')
-CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
+# ИСПРАВЛЕНО: CORS для Vercel фронтенда
+cors_origins = config('CORS_ALLOWED_ORIGINS', default='https://fullstack-portfolio-new.vercel.app,http://localhost:3000')
+CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_origins.split(',') if origin.strip()]
+
+print(f"🌐 CORS_ALLOWED_ORIGINS: {CORS_ALLOWED_ORIGINS}")
 
 # Безопасность
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
-# Email настройки для продакшена
+# ИСПРАВЛЕНО: Email настройки - используем твои данные из основного settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
 EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
-EMAIL_HOST_USER = config('GMAIL_USER', default='')
-EMAIL_HOST_PASSWORD = config('GMAIL_APP_PASSWORD', default='')
 
-# Email данные
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='vitalivo@gmail.com')
-CONTACT_FORM_RECIPIENT_EMAIL = config('CONTACT_FORM_RECIPIENT_EMAIL', default='vitalivo@gmail.com')
+# ИСПРАВЛЕНО: Используем твои переменные из основных настроек
+GMAIL_USER = config('GMAIL_USER', default='vitalivo@gmail.com')
+GMAIL_APP_PASSWORD = config('GMAIL_APP_PASSWORD', default='avsx tsjl brds cmlf')
 
-# Telegram настройки
-TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='')
-TELEGRAM_CHAT_ID = config('TELEGRAM_CHAT_ID', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default=GMAIL_USER)
+CONTACT_FORM_RECIPIENT_EMAIL = config('CONTACT_FORM_RECIPIENT_EMAIL', default=GMAIL_USER)
+
+# ИСПРАВЛЕНО: Telegram настройки - твои данные
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8447589158:AAF23a8ZvDBkZYLdfOL4t2p6j8AEsW9_ZKA')
+TELEGRAM_CHAT_ID = config('TELEGRAM_CHAT_ID', default='769259836')
+
+# ИСПРАВЛЕНО: Переменные для суперпользователя с конкретными значениями
+DJANGO_SUPERUSER_USERNAME = config('DJANGO_SUPERUSER_USERNAME', default='admin')
+DJANGO_SUPERUSER_EMAIL = config('DJANGO_SUPERUSER_EMAIL', default='vitalivo@gmail.com')
+DJANGO_SUPERUSER_PASSWORD = config('DJANGO_SUPERUSER_PASSWORD', default='admin123456')
 
 # Логирование для продакшена
 LOGGING = {
