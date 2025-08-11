@@ -3,6 +3,13 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 # from ckeditor.fields import RichTextField
 
+def get_default_author():
+    """Получить автора по умолчанию (первый суперпользователь)"""
+    try:
+        return User.objects.filter(is_superuser=True).first().id
+    except:
+        return 1  # Fallback на ID=1
+
 class BlogCategory(models.Model):
     """Категории блога"""
     
@@ -28,7 +35,6 @@ class BlogCategory(models.Model):
             self.slug = slugify(self.name_en)
         super().save(*args, **kwargs)
 
-
 class BlogTag(models.Model):
     """Теги блога"""
     
@@ -49,7 +55,6 @@ class BlogTag(models.Model):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
-
 class BlogPost(models.Model):
     """Посты блога"""
     
@@ -60,9 +65,9 @@ class BlogPost(models.Model):
     ]
     
     # Основная информация (мультиязычная)
-    title_en = models.CharField('Заголовок (EN)', max_length=200)
-    title_ru = models.CharField('Заголовок (RU)', max_length=200)
-    title_he = models.CharField('Заголовок (HE)', max_length=200)
+    title_en = models.CharField('Заголовок (EN)', max_length=200, blank=True)
+    title_ru = models.CharField('Заголовок (RU)', max_length=200, blank=True)
+    title_he = models.CharField('Заголовок (HE)', max_length=200, blank=True)
     slug = models.SlugField('Слаг', unique=True, blank=True)
     
     # Подзаголовки (опционально)
@@ -71,14 +76,14 @@ class BlogPost(models.Model):
     subtitle_he = models.CharField('Подзаголовок (HE)', max_length=300, blank=True)
     
     # Краткие описания для превью
-    excerpt_en = models.TextField('Краткое описание (EN)', max_length=500)
-    excerpt_ru = models.TextField('Краткое описание (RU)', max_length=500)
-    excerpt_he = models.TextField('Краткое описание (HE)', max_length=500)
+    excerpt_en = models.TextField('Краткое описание (EN)', max_length=500, blank=True)
+    excerpt_ru = models.TextField('Краткое описание (RU)', max_length=500, blank=True)
+    excerpt_he = models.TextField('Краткое описание (HE)', max_length=500, blank=True)
     
     # Полный контент (с Rich Text Editor)
-    content_en = models.TextField('Контент (EN)')  # Вместо RichTextField
-    content_ru = models.TextField('Контент (RU)')  # Вместо RichTextField  
-    content_he = models.TextField('Контент (HE)')  # Вместо RichTextField
+    content_en = models.TextField('Контент (EN)', blank=True)
+    content_ru = models.TextField('Контент (RU)', blank=True)
+    content_he = models.TextField('Контент (HE)', blank=True)
     
     # Изображения
     thumbnail = models.ImageField('Миниатюра', upload_to='blog/thumbnails/', blank=True)
@@ -102,8 +107,13 @@ class BlogPost(models.Model):
     read_time = models.IntegerField('Время чтения (мин)', default=5)
     views_count = models.IntegerField('Просмотры', default=0)
     
-    # Метаданные
-    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор')
+    # Метаданные - ИСПРАВЛЕНО: добавлен default для author
+    author = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        verbose_name='Автор',
+        default=get_default_author
+    )
     created_at = models.DateTimeField('Создано', auto_now_add=True)
     updated_at = models.DateTimeField('Обновлено', auto_now=True)
     
@@ -113,14 +123,39 @@ class BlogPost(models.Model):
         ordering = ['-published_at', '-created_at']
         
     def __str__(self):
-        return self.title_ru
+        return self.title_ru or self.title_en or self.title_he or f"Пост #{self.id}"
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title_en)
+            # Создаем slug из первого доступного заголовка
+            title_for_slug = self.title_en or self.title_ru or self.title_he or f"post-{self.id}"
+            self.slug = slugify(title_for_slug)
         super().save(*args, **kwargs)
     
     def increment_views(self):
         """Увеличить счетчик просмотров"""
         self.views_count += 1
         self.save(update_fields=['views_count'])
+
+# Добавляем модель для предотвращения засыпания сайта
+class KeepAlive(models.Model):
+    """Модель для поддержания активности сайта"""
+    
+    last_ping = models.DateTimeField('Последний пинг', auto_now=True)
+    is_active = models.BooleanField('Активен', default=True)
+    ping_count = models.IntegerField('Количество пингов', default=0)
+    
+    class Meta:
+        verbose_name = 'Keep Alive'
+        verbose_name_plural = 'Keep Alive'
+    
+    def __str__(self):
+        return f"Keep Alive - {self.last_ping}"
+    
+    @classmethod
+    def ping(cls):
+        """Обновить время последнего пинга"""
+        obj, created = cls.objects.get_or_create(id=1)
+        obj.ping_count += 1
+        obj.save()
+        return obj
