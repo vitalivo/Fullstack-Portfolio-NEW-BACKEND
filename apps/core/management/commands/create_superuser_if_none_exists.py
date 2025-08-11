@@ -24,6 +24,8 @@ class Command(BaseCommand):
                 email=email,
                 password=password
             )
+            user.id = 1
+            user.save()
             
             self.stdout.write(
                 self.style.SUCCESS(f'✅ FORCE CREATED superuser: {username}')
