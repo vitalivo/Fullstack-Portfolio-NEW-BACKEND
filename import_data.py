@@ -1,40 +1,70 @@
-# import_data.py
 import os
 import django
-import json
+from django.core.management.base import BaseCommand
 
 # Настройка Django для продакшена
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings_production')
 django.setup()
 
+class Command(BaseCommand):
+    help = 'Import initial data (safe for existing data)'
+
+    def handle(self, *args, **options):
+        """Импорт данных в продакшн базу с проверкой существующих данных"""
+        
+        files_to_import = [
+            ('data_export_core.json', None),  # Всегда импортируем core данные
+            ('data_export_skills.json', 'skills.Skill'),
+            ('data_export_portfolio.json', 'portfolio.Project'), 
+            ('data_export_certificates.json', 'certificates.Certificate'),
+            ('data_export_blog.json', 'blog.BlogPost'),  # Проверяем блог-посты
+            ('data_export_contacts.json', 'contacts.Contact')
+        ]
+        
+        for filename, model_check in files_to_import:
+            if os.path.exists(filename):
+                try:
+                    should_import = True
+                    if model_check:
+                        app_label, model_name = model_check.split('.')
+                        from django.apps import apps
+                        try:
+                            model_class = apps.get_model(app_label, model_name)
+                            if model_class.objects.exists():
+                                self.stdout.write(
+                                    self.style.WARNING(f'⚠️ {model_check} data already exists, skipping {filename}')
+                                )
+                                should_import = False
+                        except Exception as e:
+                            self.stdout.write(
+                                self.style.WARNING(f'⚠️ Could not check {model_check}: {e}')
+                            )
+                    
+                    if should_import:
+                        self.stdout.write(f"📥 Importing {filename}...")
+                        
+                        from django.core.management import call_command
+                        call_command('loaddata', filename)
+                        
+                        self.stdout.write(
+                            self.style.SUCCESS(f"✅ {filename} imported successfully")
+                        )
+                    
+                except Exception as e:
+                    self.stdout.write(
+                        self.style.ERROR(f"❌ Error importing {filename}: {e}")
+                    )
+            else:
+                self.stdout.write(
+                    self.style.WARNING(f"⚠️ File {filename} not found")
+                )
+
+        self.stdout.write(self.style.SUCCESS("\n🎉 Import completed!"))
+
 def import_data():
-    """Импорт данных в продакшн базу"""
-    
-    # Список файлов для импорта (в правильном порядке)
-    files_to_import = [
-        'data_export_core.json',
-        'data_export_skills.json', 
-        'data_export_portfolio.json',
-        'data_export_certificates.json',
-        'data_export_blog.json',
-        'data_export_contacts.json'
-    ]
-    
-    for filename in files_to_import:
-        if os.path.exists(filename):
-            try:
-                print(f"Импортируем {filename}...")
-                
-                from django.core.management import call_command
-                call_command('loaddata', filename)
-                
-                print(f"✅ {filename} импортирован успешно")
-                
-            except Exception as e:
-                print(f"❌ Ошибка при импорте {filename}: {e}")
-        else:
-            print(f"⚠️ Файл {filename} не найден")
+    """Legacy function for backward compatibility"""
+    from django.core.management import call_command
+    call_command('import_data')
 
 if __name__ == "__main__":
     import_data()
-    print("\n🎉 Импорт завершен!")
