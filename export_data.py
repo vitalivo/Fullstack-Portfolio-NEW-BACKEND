@@ -17,7 +17,6 @@ def export_data():
         'skills', 
         'portfolio',
         'certificates',
-        'blog',
         'contacts'
     ]
     

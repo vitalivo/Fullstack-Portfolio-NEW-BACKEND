@@ -18,7 +18,6 @@ class Command(BaseCommand):
             ('data_export_portfolio.json', 'portfolio.Project'), 
             ('data_export_certificates.json', 'certificates.Certificate'),
             ('data_export_contacts.json', 'contacts.Contact')
-            # Убрали data_export_blog.json - будем загружать вручную
         ]
         
         self.stdout.write("📦 Importing fixtures data...")
