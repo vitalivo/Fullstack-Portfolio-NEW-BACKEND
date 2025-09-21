@@ -172,7 +172,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://fullstack-portfolio-new.vercel.app",  # ← ИСПРАВИТЬ ЭТУ СТРОКУ!
+    "https://vitaly-portfolio-full-structure-9hto1bk12.vercel.app",  # ← ИСПРАВИТЬ ЭТУ СТРОКУ!
 ]
 
 CORS_ALLOW_CREDENTIALS = True
